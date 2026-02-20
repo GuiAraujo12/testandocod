@@ -131,12 +131,10 @@ public class Heap {
      public static int contarMenoresQueK(Node raiz, int k) {
         if (raiz == null) return 0;
 
-        // Se o valor do nó já é >= k, só precisamos olhar a esquerda
         if (raiz.valor >= k) {
             return contarMenoresQueK(raiz.esq, k);
         }
 
-        // Se é menor que k, conta esse + tudo da esquerda + continua na direita
         return 1 + contarMenoresQueK(raiz.esq, k)
                  + contarMenoresQueK(raiz.dir, k);
 
